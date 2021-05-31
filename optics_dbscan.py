@@ -261,7 +261,7 @@ def main():
     elif EX_TYPE == 'book_data':
 
         # Read data from a local file
-        # filedir = os.path.dirname(__file__)
+        filedir = os.path.dirname(__file__)
         # datadir = os.path.join(filedir, 'data')
         # raw_data = pd.read_csv(datadir + r'\book_data.csv', sep = "\t", nrows = NUMBER_OF_ITEMS)
 
