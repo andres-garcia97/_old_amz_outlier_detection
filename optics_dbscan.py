@@ -259,11 +259,15 @@ def main():
         X = np.vstack((C1, C2, C3, C4, C5, C6))
 
     elif EX_TYPE == 'book_data':
-        filedir = os.path.dirname(__file__)
-        datadir = os.path.join(filedir, 'data')
-        raw_data = pd.read_csv(datadir + r'\book_data.csv', sep = "\t", nrows = NUMBER_OF_ITEMS)
-        # url_drive = 'https://drive.google.com/file/d/1ZD6I_cZ7DZXWveSYnxBu2_m-7sS7BTzt/view?usp=sharing'
-        # raw_data = pd.read_csv(url_drive, sep = "\t", nrows = NUMBER_OF_ITEMS)
+
+        # Read data from a local file
+        # filedir = os.path.dirname(__file__)
+        # datadir = os.path.join(filedir, 'data')
+        # raw_data = pd.read_csv(datadir + r'\book_data.csv', sep = "\t", nrows = NUMBER_OF_ITEMS)
+
+        # Read from the github repo
+        url_drive = 'https://media.githubusercontent.com/media/andres-garcia97/amz_outlier_detection/main/book_data.csv'
+        raw_data = pd.read_csv(url_drive, sep = "\t", nrows = NUMBER_OF_ITEMS, encoding='latin-1')
         
         # Cleaning and slicing
         if raw_data.isna().sum().sum() < .10 * raw_data.size: 
